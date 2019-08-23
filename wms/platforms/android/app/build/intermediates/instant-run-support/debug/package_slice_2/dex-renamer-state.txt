@@ -1,0 +1,4 @@
+#Fri Aug 23 12:26:19 IST 2019
+base.0=C\:\\CordovaDemoApps\\wms_after_file_implement_backup_1_7_19\\wms\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
+path.0=classes.dex
+renamed.0=classes.dex

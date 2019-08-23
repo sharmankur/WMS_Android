@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>OptiProERP-WMS</title>
+    <base href=".">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/theme/kendo_custom_stripe.css">
+</head>
+<body>
+<app-root></app-root>
+<div class="app" style="display: none;">
+    <h1>Apache Cordova</h1>
+    <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
+    </div>
+</div>
+<script type="text/javascript" src="runtime.js"></script>
+<script type="text/javascript" src="polyfills.js"></script>
+<script type="text/javascript" src="styles.js"></script>
+<script type="text/javascript" src="vendor.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="../cordova.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</body>
+<footer id="opti_footerID">
+    <script>
+
+     var hostName = (window.location.href).replace('#/', '');
+     //var imageUrl = hostName +'/assets/images/signup/nouse/shutter/body-bg-new-5.jpg';
+     var imageUrl = '/assets/images/signup/nouse/shutter/background2.jpg';
+	 console.warn('IMAGEPATH',imageUrl);
+	 $('body').css('background-image', 'url(' + imageUrl + ')');
+
+    var cssfile = '<link rel="stylesheet" class="opti__theme-css-file" href="../assets/css/theme/kendo_custom_stripe.css?v=' + (new Date()).getTime() + '" />';
+    document.write(cssfile);
+
+    </script>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  // this is a jquery code first bind element then take its event.
+
+     $(document).ready(function(){
+
+        //Inbound module scanning
+        $(document).on("click", "#inboundscanButton", function(){
+            app.scanBarCode('inboundScanInputField',"#hiddenScanButton");
+       });
+       //Inventory module batch scanning
+       $(document).on("click", "#printBatchSerialscanButton", function(){
+            app.scanBarCode('invEnqBatchNoScanInput',"#inventoryBatchHiddenScanButton");
+       });
+       //Inventory module item scanning
+       $(document).on("click", "#printItemscanButton", function(){
+            app.scanBarCode('invEnqItemNoScanInput2',"#inventoryItemHiddenScanButton");
+       });
+
+       // outbound scan detail.
+       $(document).on("click", "#outBoundDeliverForSOScan", function(){
+          app.scanBarCode('outboundOrderNoScanInput',);
+       });
+
+       // physical count scan detail.
+       $(document).on("click", "#scanButtonPC", function(){
+          app.scanBarCode('scanInputFieldPC',"#hiddenScanButtonPC");
+       });
+
+
+ });
+
+</script>
+</html>
